@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+import os
+import torch
+from diffusers import DiffusionPipeline, TextToVideoSDPipeline
+
+stable_diffusion_pipe = DiffusionPipeline.from_pretrained(
+    "stabilityai/stable-diffusion-xl-base-1.0",
+    torch_dtype=torch.float16,
+    cache_dir="model-cache"
+)
+
+pipe = TextToVideoSDPipeline.from_pretrained(
+        "motexture/vseq2vseq",
+        cache_dir="model-cache",
+    )
+

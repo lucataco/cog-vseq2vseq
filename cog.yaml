@@ -1,0 +1,28 @@
+# Configuration for Cog
+build:
+  gpu: true
+  cuda: "11.8"
+  system_packages:
+    - ffmpeg
+  python_version: "3.10"
+  python_packages:
+    - "accelerate==0.23.0"
+    - "decord==0.6.0"
+    - "diffusers==0.21.4"
+    - "einops==0.7.0"
+    - "numpy==1.22.0"
+    - "omegaconf==2.3.0"
+    - "opencv_python==4.8.1.78"
+    - "safetensors==0.4.0"
+    - "torch==2.1.0"
+    - "torchvision"
+    - "tqdm==4.64.1"
+    - "transformers==4.35.2"
+    - "wandb==0.15.12"
+    - "xformers==0.0.22.post7"
+
+  run:
+    - git clone https://github.com/motexture/vseq2vseq.git /vseq2vseq
+
+# predict.py defines how predictions are run on your model
+predict: "predict.py:Predictor"
