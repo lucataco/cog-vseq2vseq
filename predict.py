@@ -69,8 +69,8 @@ class Predictor(BasePredictor):
     ) -> Path:
         """Run a single prediction on the model"""
         # Cleanup past runs
-        os.system("rm -rf /vseq2vseq/output")
-        os.makedirs("/vseq2vseq/output")
+        os.system("rm -rf /src/output")
+        os.makedirs("/src/output")
         
         command = [
             "python", "/vseq2vseq/inference.py",
